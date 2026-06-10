@@ -90,6 +90,8 @@ smart-content-purifier-summary-hub/
   - FINAL_PORTFOLIO_PACKAGE.md
   - LAUNCH_NOTES.md
   - VISUAL_ASSETS.md
+  - FINAL_PROJECT_STATUS.md
+  - LAUNCH_POST_FINAL.md
 ```
 
 ## How It Works
@@ -137,6 +139,8 @@ Additional project documentation is available in the `docs/` folder:
 - [`docs/FINAL_PORTFOLIO_PACKAGE.md`](docs/FINAL_PORTFOLIO_PACKAGE.md) — final portfolio-ready package for presenting the MVP
 - [`docs/LAUNCH_NOTES.md`](docs/LAUNCH_NOTES.md) — final approval and launch readiness notes for MVP v0.1
 - [`docs/VISUAL_ASSETS.md`](docs/VISUAL_ASSETS.md) — screenshot and demo asset tracking for portfolio presentation
+- [`docs/FINAL_PROJECT_STATUS.md`](docs/FINAL_PROJECT_STATUS.md) — final completion status and closure summary for MVP v0.1
+- [`docs/LAUNCH_POST_FINAL.md`](docs/LAUNCH_POST_FINAL.md) — final LinkedIn and Threads/X launch copy
 
 ## MVP Limitations
 
