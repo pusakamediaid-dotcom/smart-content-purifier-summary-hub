@@ -88,6 +88,7 @@ smart-content-purifier-summary-hub/
   - CASE_STUDY.md
   - PROMOTION_ASSETS.md
   - FINAL_PORTFOLIO_PACKAGE.md
+  - LAUNCH_NOTES.md
 ```
 
 ## How It Works
@@ -133,6 +134,7 @@ Additional project documentation is available in the `docs/` folder:
 - [`docs/CASE_STUDY.md`](docs/CASE_STUDY.md) — portfolio case study covering problem, solution, architecture, deployment, QC, results, and roadmap
 - [`docs/PROMOTION_ASSETS.md`](docs/PROMOTION_ASSETS.md) — reusable portfolio promotion assets for recruiters, clients, communities, and social media
 - [`docs/FINAL_PORTFOLIO_PACKAGE.md`](docs/FINAL_PORTFOLIO_PACKAGE.md) — final portfolio-ready package for presenting the MVP
+- [`docs/LAUNCH_NOTES.md`](docs/LAUNCH_NOTES.md) — final approval and launch readiness notes for MVP v0.1
 
 ## MVP Limitations
 
