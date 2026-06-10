@@ -84,7 +84,8 @@ smart-content-purifier-summary-hub/
 └── docs/
     ├── USAGE.md
     ├── QC.md
-    └── ROADMAP.md
+    ├── ROADMAP.md
+    └── CASE_STUDY.md
 ```
 
 ## How It Works
@@ -127,6 +128,7 @@ Additional project documentation is available in the `docs/` folder:
 - [`docs/USAGE.md`](docs/USAGE.md) — how to use the application
 - [`docs/QC.md`](docs/QC.md) — MVP quality control checklist
 - [`docs/ROADMAP.md`](docs/ROADMAP.md) — planned improvement direction
+- [`docs/CASE_STUDY.md`](docs/CASE_STUDY.md) — portfolio case study covering problem, solution, architecture, deployment, QC, results, and roadmap
 
 ## MVP Limitations
 
