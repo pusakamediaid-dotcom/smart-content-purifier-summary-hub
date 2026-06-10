@@ -20,17 +20,42 @@ IMPORTANT_KEYWORDS = (
     "fitur", "pengguna", "produk", "konten", "ringkasan", "belajar",
 )
 
-# Split sentences after common sentence-ending punctuation, including repeated
-# punctuation and closing quotes/brackets. This is still lightweight and avoids
-# adding NLP dependencies such as NLTK or SpaCy.
+KNOWN_ABBREVIATIONS = (
+    "dr.", "prof.", "mr.", "mrs.", "ms.", "jr.", "sr.", "vs.", "etc.",
+    "dll.", "dst.", "dsb.", "no.", "s.pd.", "m.pd.", "s.kom.", "m.kom.",
+)
+
+DOT_PLACEHOLDER = "<dot>"
+
+# Split sentences after sentence-ending punctuation. This stays lightweight and
+# avoids extra NLP dependencies while supporting common quotes and brackets.
 _SENTENCE_SPLIT_PATTERN = re.compile(
     r"(?<=[.!?])(?:[\"'\)\]\}]*)\s+(?=[A-Z0-9\"'\(\[])",
     flags=re.MULTILINE,
 )
 
 
+def _protect_abbreviations(text: str) -> str:
+    """Protect known abbreviations from being split as sentence endings."""
+    protected = text
+    for abbreviation in KNOWN_ABBREVIATIONS:
+        safe_abbreviation = abbreviation.replace(".", DOT_PLACEHOLDER)
+        protected = re.sub(
+            re.escape(abbreviation),
+            safe_abbreviation,
+            protected,
+            flags=re.IGNORECASE,
+        )
+    return protected
+
+
+def _restore_abbreviations(text: str) -> str:
+    """Restore protected abbreviation dots."""
+    return text.replace(DOT_PLACEHOLDER, ".")
+
+
 def _split_sentences(text: str) -> List[str]:
-    """Split cleaned text into readable sentences using a robust regex."""
+    """Split cleaned text into readable sentences using a safer regex."""
     cleaned = clean_text(text)
     if not cleaned:
         return []
@@ -39,11 +64,12 @@ def _split_sentences(text: str) -> List[str]:
     if not normalized:
         return []
 
-    parts = _SENTENCE_SPLIT_PATTERN.split(normalized)
+    protected = _protect_abbreviations(normalized)
+    parts = _SENTENCE_SPLIT_PATTERN.split(protected)
     sentences = []
 
     for part in parts:
-        sentence = part.strip()
+        sentence = _restore_abbreviations(part.strip())
         if not sentence:
             continue
         if len(sentence.split()) < 4:
