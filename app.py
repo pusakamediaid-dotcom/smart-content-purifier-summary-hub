@@ -5,6 +5,33 @@ from config.modes import LIST_MODES, MODE_DESCRIPTIONS, DEFAULT_MODE, EXAMPLE_IN
 
 APP_TITLE = "Smart Content Purifier & Summary Hub"
 
+UI_EXAMPLE_INPUT = """
+Banyak tim membuat artikel, catatan meeting, dan materi belajar dengan bantuan AI.
+Namun hasil awal sering terlalu panjang, berulang, dan belum siap dipakai langsung.
+Karena itu, teks mentah perlu dibersihkan terlebih dahulu agar lebih rapi dan mudah dibaca.
+Setelah teks bersih, pengguna dapat membuat ringkasan pendek atau mengambil poin penting.
+Alur sederhana ini membantu konten menjadi lebih siap untuk dokumentasi, riset, dan publikasi.
+""".strip() or EXAMPLE_INPUT
+
+INTRO_TEXT = """
+Bersihkan teks berantakan, buat ringkasan pendek, dan ambil poin penting dalam satu tempat.
+MVP v0.1 ini memakai pemrosesan ringan agar tetap cepat, stabil, dan ramah untuk Hugging Face Free CPU.
+"""
+
+HELP_TEXT = """
+**Cara pakai singkat:**
+1. Tempel teks mentah di kolom input.
+2. Pilih mode proses yang dibutuhkan.
+3. Klik **Proses Teks**.
+4. Klik **Export Markdown** jika ingin hasil siap salin dalam format Markdown.
+"""
+
+FOOTER_TEXT = """
+---
+**Smart Content Purifier & Summary Hub — MVP v0.1**  
+Dibuat untuk portfolio AI app: sederhana, stabil, tanpa API berbayar, dan siap berjalan di Hugging Face Spaces.
+"""
+
 
 def run_app(text, mode):
     if not text or not text.strip():
@@ -19,24 +46,30 @@ def run_export(mode, output_text):
 
 
 def get_mode_description(mode):
-    return MODE_DESCRIPTIONS.get(mode, MODE_DESCRIPTIONS.get(DEFAULT_MODE, ""))
+    description = MODE_DESCRIPTIONS.get(mode, MODE_DESCRIPTIONS.get(DEFAULT_MODE, ""))
+    return f"**Mode aktif:** {mode or DEFAULT_MODE}\n\n{description}"
 
 
 with gr.Blocks(title=APP_TITLE) as demo:
     gr.Markdown("# Smart Content Purifier & Summary Hub")
-    gr.Markdown("Alat sederhana untuk membersihkan, meringkas, dan mengambil poin penting dari teks Anda.")
+    gr.Markdown(INTRO_TEXT)
+    gr.Markdown(HELP_TEXT)
 
     with gr.Row():
         with gr.Column():
             input_text = gr.Textbox(
-                label="Input Teks",
-                placeholder="Tempelkan teks Anda di sini...",
-                lines=10,
-                value=EXAMPLE_INPUT,
+                label="Input teks mentah",
+                placeholder=(
+                    "Tempel artikel, catatan meeting, materi belajar, atau draft konten di sini. "
+                    "Gunakan minimal satu paragraf agar hasil lebih informatif."
+                ),
+                lines=12,
+                value=UI_EXAMPLE_INPUT,
+                show_copy_button=True,
             )
             mode_radio = gr.Radio(
                 choices=LIST_MODES,
-                label="Pilih Mode",
+                label="Pilih jenis pemrosesan",
                 value=DEFAULT_MODE,
             )
             mode_note = gr.Markdown(get_mode_description(DEFAULT_MODE))
@@ -44,14 +77,16 @@ with gr.Blocks(title=APP_TITLE) as demo:
 
         with gr.Column():
             output_text = gr.Textbox(
-                label="Hasil",
+                label="Hasil pemrosesan",
+                placeholder="Hasil Clean Text, Short Summary, atau Key Points akan muncul di sini.",
                 lines=15,
                 interactive=False,
                 show_copy_button=True,
             )
             export_btn = gr.Button("Export Markdown")
             export_output = gr.Textbox(
-                label="Hasil Export Markdown",
+                label="Hasil export Markdown",
+                placeholder="Klik Export Markdown setelah hasil pemrosesan muncul.",
                 lines=10,
                 interactive=False,
                 show_copy_button=True,
@@ -73,8 +108,7 @@ with gr.Blocks(title=APP_TITLE) as demo:
         outputs=mode_note,
     )
 
-    gr.Markdown("---")
-    gr.Markdown("MVP v0.1 - Dibuat untuk kecepatan dan stabilitas.")
+    gr.Markdown(FOOTER_TEXT)
 
 if __name__ == "__main__":
     demo.launch(server_name="0.0.0.0", server_port=7860)
