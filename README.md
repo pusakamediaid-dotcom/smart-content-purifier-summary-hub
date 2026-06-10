@@ -2,8 +2,9 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](#)
 [![Gradio](https://img.shields.io/badge/Gradio-MVP%20Demo-orange)](#)
+[![CI](https://github.com/pusakamediaid-dotcom/smart-content-purifier-summary-hub/actions/workflows/ci.yml/badge.svg)](https://github.com/pusakamediaid-dotcom/smart-content-purifier-summary-hub/actions/workflows/ci.yml)
 [![Hugging%20Face%20Spaces](https://img.shields.io/badge/Hugging%20Face-Live%20Space-yellow)](https://huggingface.co/spaces/pusakamediaid123/smart-content-purifier-summary-hub)
-[![Status](https://img.shields.io/badge/Status-MVP%20v0.1%20Live-success)](#)
+[![Status](https://img.shields.io/badge/Status-MVP%20v0.1.1%20Hardened-success)](#)
 
 Smart Content Purifier & Summary Hub is a lightweight Gradio application that helps users clean messy text, generate short summaries, extract key points, and export the result as Markdown.
 
@@ -19,11 +20,11 @@ https://github.com/pusakamediaid-dotcom/smart-content-purifier-summary-hub
 
 ## Project Status
 
-Current version: **MVP v0.1 live**
+Current version: **MVP v0.1.1 hardened**
 
-QC status: **Layak Lanjut Bersyarat**
+QC status: **Portfolio Ready — Hardening Added**
 
-The current MVP is ready for continued polish, documentation improvement, and small stability refinements. The application is intentionally simple and avoids heavy model dependencies so it can stay fast, stable, and easy to deploy.
+The current MVP is ready for portfolio review, sharing, and lightweight maintenance. The application is intentionally simple and avoids heavy model dependencies so it can stay fast, stable, and easy to deploy.
 
 ## Core Features
 
@@ -55,6 +56,7 @@ For portfolio purposes, this project demonstrates:
 - Lightweight text processing
 - Modular project architecture
 - Documentation and MVP delivery discipline
+- Basic unit testing and CI hardening
 
 ## Tech Stack
 
@@ -63,8 +65,10 @@ For portfolio purposes, this project demonstrates:
 - Standard library text processing
 - Hugging Face Spaces
 - GitHub
+- Pytest
+- GitHub Actions
 
-No paid API, no private credential, and no external AI API are required for MVP v0.1.
+No paid API, no private credential, and no external AI API are required for MVP v0.1.1.
 
 ## Project Structure
 
@@ -73,6 +77,10 @@ smart-content-purifier-summary-hub/
 - app.py
 - requirements.txt
 - README.md
+- .gitignore
+- .github/
+  - workflows/
+    - ci.yml
 - core/
   - __init__.py
   - cleaner.py
@@ -81,6 +89,9 @@ smart-content-purifier-summary-hub/
 - config/
   - __init__.py
   - modes.py
+- tests/
+  - test_cleaner.py
+  - test_processor.py
 - docs/
   - USAGE.md
   - QC.md
@@ -92,6 +103,7 @@ smart-content-purifier-summary-hub/
   - VISUAL_ASSETS.md
   - FINAL_PROJECT_STATUS.md
   - LAUNCH_POST_FINAL.md
+  - HARDENING_NOTES.md
 ```
 
 ## How It Works
@@ -125,6 +137,12 @@ Run the app:
 python app.py
 ```
 
+Run tests:
+
+```bash
+pytest
+```
+
 Then open the local Gradio URL shown in the terminal.
 
 ## Documentation
@@ -141,6 +159,7 @@ Additional project documentation is available in the `docs/` folder:
 - [`docs/VISUAL_ASSETS.md`](docs/VISUAL_ASSETS.md) — screenshot and demo asset tracking for portfolio presentation
 - [`docs/FINAL_PROJECT_STATUS.md`](docs/FINAL_PROJECT_STATUS.md) — final completion status and closure summary for MVP v0.1
 - [`docs/LAUNCH_POST_FINAL.md`](docs/LAUNCH_POST_FINAL.md) — final LinkedIn and Threads/X launch copy
+- [`docs/HARDENING_NOTES.md`](docs/HARDENING_NOTES.md) — MVP v0.1.1 hardening notes for tests, CI, and dependency pinning
 
 ## MVP Limitations
 
@@ -150,4 +169,4 @@ Planned future improvements may include better summarization logic, JSON export,
 
 ## Portfolio Note
 
-This project is part of a staged AI portfolio build. The first milestone focuses on a working live MVP. The next milestones focus on documentation polish, UI polish, and gradual feature expansion without breaking deployment stability.
+This project is part of a staged AI portfolio build. The first milestone focuses on a working live MVP. The next milestones focus on documentation polish, UI polish, repository hardening, and gradual feature expansion without breaking deployment stability.
