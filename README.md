@@ -24,6 +24,8 @@ Current version: **MVP v0.1.1 hardened**
 
 QC status: **Portfolio Ready — Hardening Added**
 
+Publication status: **Public portfolio repository ready**
+
 The current MVP is ready for portfolio review, sharing, and lightweight maintenance. The application is intentionally simple and avoids heavy model dependencies so it can stay fast, stable, and easy to deploy.
 
 ## Core Features
@@ -96,6 +98,7 @@ smart-content-purifier-summary-hub/
   - USAGE.md
   - QC.md
   - ROADMAP.md
+  - AI_UPGRADE_PLAN.md
   - CASE_STUDY.md
   - PROMOTION_ASSETS.md
   - FINAL_PORTFOLIO_PACKAGE.md
@@ -104,6 +107,8 @@ smart-content-purifier-summary-hub/
   - FINAL_PROJECT_STATUS.md
   - LAUNCH_POST_FINAL.md
   - HARDENING_NOTES.md
+  - PUBLISHING_CHECKLIST.md
+  - FINAL_PUBLICATION_REVIEW.md
 ```
 
 ## How It Works
@@ -161,6 +166,8 @@ Additional project documentation is available in the `docs/` folder:
 - [`docs/FINAL_PROJECT_STATUS.md`](docs/FINAL_PROJECT_STATUS.md) — final completion status and closure summary for MVP v0.1
 - [`docs/LAUNCH_POST_FINAL.md`](docs/LAUNCH_POST_FINAL.md) — final LinkedIn and Threads/X launch copy
 - [`docs/HARDENING_NOTES.md`](docs/HARDENING_NOTES.md) — MVP v0.1.1 hardening notes for tests, CI, and dependency pinning
+- [`docs/PUBLISHING_CHECKLIST.md`](docs/PUBLISHING_CHECKLIST.md) — final checklist before publishing the repository
+- [`docs/FINAL_PUBLICATION_REVIEW.md`](docs/FINAL_PUBLICATION_REVIEW.md) — final review for public portfolio publication
 
 ## MVP Limitations
 
