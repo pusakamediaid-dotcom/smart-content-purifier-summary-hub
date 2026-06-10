@@ -1,7 +1,7 @@
 """
-Rule-based processor for Smart Content Purifier & Summary Hub MVP v0.1.
+Rule-based processor for Smart Content Purifier & Summary Hub MVP v0.1.1.
 
-This module intentionally avoids heavy AI dependencies in MVP v0.1.
+This module intentionally avoids heavy AI dependencies in MVP v0.1.1.
 The goal is to make the first version fast, stable, and easy to deploy
 on Hugging Face Spaces free CPU.
 """
@@ -20,17 +20,26 @@ IMPORTANT_KEYWORDS = (
     "fitur", "pengguna", "produk", "konten", "ringkasan", "belajar",
 )
 
-
-_SENTENCE_SPLIT_PATTERN = re.compile(r"(?<=[.!?])\s+")
+# Split sentences after common sentence-ending punctuation, including repeated
+# punctuation and closing quotes/brackets. This is still lightweight and avoids
+# adding NLP dependencies such as NLTK or SpaCy.
+_SENTENCE_SPLIT_PATTERN = re.compile(
+    r"(?<=[.!?])(?:[\"'\)\]\}]*)\s+(?=[A-Z0-9\"'\(\[])",
+    flags=re.MULTILINE,
+)
 
 
 def _split_sentences(text: str) -> List[str]:
-    """Split cleaned text into readable sentences."""
+    """Split cleaned text into readable sentences using a robust regex."""
     cleaned = clean_text(text)
     if not cleaned:
         return []
 
-    parts = _SENTENCE_SPLIT_PATTERN.split(cleaned.replace("\n", " "))
+    normalized = re.sub(r"\s+", " ", cleaned.replace("\n", " ")).strip()
+    if not normalized:
+        return []
+
+    parts = _SENTENCE_SPLIT_PATTERN.split(normalized)
     sentences = []
 
     for part in parts:
@@ -41,8 +50,8 @@ def _split_sentences(text: str) -> List[str]:
             continue
         sentences.append(sentence)
 
-    if not sentences and cleaned:
-        sentences = [cleaned]
+    if not sentences and normalized:
+        sentences = [normalized]
 
     return sentences
 
@@ -159,7 +168,7 @@ def process_text(text: str, mode: str) -> str:
     """
     Process text according to the selected MVP mode.
 
-    Active MVP v0.1 modes:
+    Active MVP modes:
     - Clean Text
     - Short Summary
     - Key Points
