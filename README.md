@@ -152,6 +152,7 @@ Additional project documentation is available in the `docs/` folder:
 - [`docs/USAGE.md`](docs/USAGE.md) — how to use the application
 - [`docs/QC.md`](docs/QC.md) — MVP quality control checklist
 - [`docs/ROADMAP.md`](docs/ROADMAP.md) — planned improvement direction
+- [`docs/AI_UPGRADE_PLAN.md`](docs/AI_UPGRADE_PLAN.md) — planning document for optional AI summarization upgrade in MVP v0.2
 - [`docs/CASE_STUDY.md`](docs/CASE_STUDY.md) — portfolio case study covering problem, solution, architecture, deployment, QC, results, and roadmap
 - [`docs/PROMOTION_ASSETS.md`](docs/PROMOTION_ASSETS.md) — reusable portfolio promotion assets for recruiters, clients, communities, and social media
 - [`docs/FINAL_PORTFOLIO_PACKAGE.md`](docs/FINAL_PORTFOLIO_PACKAGE.md) — final portfolio-ready package for presenting the MVP
