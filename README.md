@@ -85,7 +85,8 @@ smart-content-purifier-summary-hub/
     ├── USAGE.md
     ├── QC.md
     ├── ROADMAP.md
-    └── CASE_STUDY.md
+    ├── CASE_STUDY.md
+    └── PROMOTION_ASSETS.md
 ```
 
 ## How It Works
@@ -129,6 +130,7 @@ Additional project documentation is available in the `docs/` folder:
 - [`docs/QC.md`](docs/QC.md) — MVP quality control checklist
 - [`docs/ROADMAP.md`](docs/ROADMAP.md) — planned improvement direction
 - [`docs/CASE_STUDY.md`](docs/CASE_STUDY.md) — portfolio case study covering problem, solution, architecture, deployment, QC, results, and roadmap
+- [`docs/PROMOTION_ASSETS.md`](docs/PROMOTION_ASSETS.md) — reusable portfolio promotion assets for recruiters, clients, communities, and social media
 
 ## MVP Limitations
 
