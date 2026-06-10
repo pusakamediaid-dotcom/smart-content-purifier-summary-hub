@@ -70,23 +70,24 @@ No paid API, no private credential, and no external AI API are required for MVP 
 
 ```text
 smart-content-purifier-summary-hub/
-├── app.py
-├── requirements.txt
-├── README.md
-├── core/
-│   ├── __init__.py
-│   ├── cleaner.py
-│   ├── processor.py
-│   └── exporter.py
-├── config/
-│   ├── __init__.py
-│   └── modes.py
-└── docs/
-    ├── USAGE.md
-    ├── QC.md
-    ├── ROADMAP.md
-    ├── CASE_STUDY.md
-    └── PROMOTION_ASSETS.md
+- app.py
+- requirements.txt
+- README.md
+- core/
+  - __init__.py
+  - cleaner.py
+  - processor.py
+  - exporter.py
+- config/
+  - __init__.py
+  - modes.py
+- docs/
+  - USAGE.md
+  - QC.md
+  - ROADMAP.md
+  - CASE_STUDY.md
+  - PROMOTION_ASSETS.md
+  - FINAL_PORTFOLIO_PACKAGE.md
 ```
 
 ## How It Works
@@ -131,6 +132,7 @@ Additional project documentation is available in the `docs/` folder:
 - [`docs/ROADMAP.md`](docs/ROADMAP.md) — planned improvement direction
 - [`docs/CASE_STUDY.md`](docs/CASE_STUDY.md) — portfolio case study covering problem, solution, architecture, deployment, QC, results, and roadmap
 - [`docs/PROMOTION_ASSETS.md`](docs/PROMOTION_ASSETS.md) — reusable portfolio promotion assets for recruiters, clients, communities, and social media
+- [`docs/FINAL_PORTFOLIO_PACKAGE.md`](docs/FINAL_PORTFOLIO_PACKAGE.md) — final portfolio-ready package for presenting the MVP
 
 ## MVP Limitations
 
