@@ -89,6 +89,7 @@ smart-content-purifier-summary-hub/
   - PROMOTION_ASSETS.md
   - FINAL_PORTFOLIO_PACKAGE.md
   - LAUNCH_NOTES.md
+  - VISUAL_ASSETS.md
 ```
 
 ## How It Works
@@ -135,6 +136,7 @@ Additional project documentation is available in the `docs/` folder:
 - [`docs/PROMOTION_ASSETS.md`](docs/PROMOTION_ASSETS.md) — reusable portfolio promotion assets for recruiters, clients, communities, and social media
 - [`docs/FINAL_PORTFOLIO_PACKAGE.md`](docs/FINAL_PORTFOLIO_PACKAGE.md) — final portfolio-ready package for presenting the MVP
 - [`docs/LAUNCH_NOTES.md`](docs/LAUNCH_NOTES.md) — final approval and launch readiness notes for MVP v0.1
+- [`docs/VISUAL_ASSETS.md`](docs/VISUAL_ASSETS.md) — screenshot and demo asset tracking for portfolio presentation
 
 ## MVP Limitations
 
