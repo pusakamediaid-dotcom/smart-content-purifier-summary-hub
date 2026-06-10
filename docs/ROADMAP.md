@@ -34,6 +34,20 @@ Goals:
 
 ## Planned Improvements
 
+### MVP v0.2 — Optional AI Summarization
+
+Status: **Planning Only**
+
+Possible improvements:
+
+- Optional AI engine selector
+- Hugging Face open-source summarizer exploration
+- Rule-based fallback
+- BYOK OpenAI/Gemini planning
+- AI summary QC benchmark
+
+This stage is only a planned direction. AI summarization must not be described as live until implementation, dependency review, security review, and benchmark testing are completed.
+
 ### MVP v0.2 — UI Polish
 
 Possible improvements:
